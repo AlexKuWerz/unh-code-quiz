@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz | Main</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="./leaderboard.html">View Leaderboard</a>
+        </nav>
+        <h1 class="logo">Code Quiz</h1>
+        <div class="quiz-timer js-timer invisible">
+            Time: <span class="js-timer-countdown">00</span>
+        </div>
+    </header>
+    <main class="site-content">
+        <section class="content-section shadow-decor js-start-section">
+            <h2 class="align-center">Quiz Rules</h2>
+            <p>In this quiz, you will answer JavaScript-related questions. After clicking the <strong>"Start Quiz"</strong> button, a timer with a time limit of <strong class="js-time-limit"></strong> seconds will appear in the upper right corner.</p>
+            <p>The final score depends on the remaining time. For every second that remains, you get one point. When time runs out or questions run out, the quiz is over.</p>
+            <p>After choosing an answer, the answer is highlighted for a second, depending on whether you answered wrong or correctly:</p>
+            <ol class="ordered-list answers-list">
+                <li class="list-item wrong-answer"><strong>Wrong</strong> answer example</li>
+                <li class="list-item correct-answer"><strong>Correct</strong> answer example</li>
+            </ol>
+            <p>For each wrong answer, the timer will decrease by <strong class="js-time-penalty"></strong> seconds.</p>
+            <button class="btn shadow-decor align-center js-start-btn" type="button">Start Quiz</button>
+        </section>
+
+        <section class="content-section shadow-decor js-quiz-section hidden">
+            <h3 class="question js-quiz-question"></h3>
+            <ol class="ordered-list answers-list js-quiz-answers-list"></ol>
+        </section>
+
+        <section class="content-section shadow-decor js-results-section hidden">
+            <h2 class="align-center">Results</h2>
+            <p class="result-score">You final Score: <strong class="js-score"></strong></p>
+            <p>You can save your result by entering your name and clicking the <strong>"Submit Result"</strong> button. Or you can restart the quiz by clicking the <strong>"Restart Quiz"</strong> button.</p>
+            <div class="align-center">
+                <button class="btn shadow-decor js-restart-btn" type="button">Restart Quiz</button>
+                <a class="btn shadow-decor js-leaderboard-btn hidden" href="./leaderboard.html">View Leaderboard</a>
+            </div>
+            <form class="js-result-form">
+                <div class="form-item">
+                    <label class="text-input-label" for="user-name">Name</label>
+                    <input class="text-input shadow-decor" type="text" name="userName" id="user-name" placeholder="Enter you name" required/>
+                </div>
+                <button class="btn shadow-decor" type="submit">Submit Result</button>
+            </form>
+        </section>
+    </main>
+    <script src="./assets/js/quize.js"></script>
+</body>
+</html>
